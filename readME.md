@@ -30,7 +30,7 @@ Let me break it down for you:
 `ID. problem name`
 This is the block that represents a found solution. Every problem has a unique ID, which is used to identify which problem you're solving when you run/submit the tests.
 
-* Running a test: run `python3 scriptdsa.py --run ID`, where --run is the name of the command (in this case, running), and ID is the identifier of the problem. This assumes that the file where you wrote your function is named script.py and the function's  name is `xcodescript`.
+* Running a test: run `python3 scriptdsa.py --run ID`, where --run is the name of the command (in this case, running), and ID is the identifier of the problem. This assumes that the file where you wrote your function is named script.py and the function's  name is `scriptdsa`.
 
 * Submitting a solution: same thing as running, `--submit` instead of `--run`.
 
@@ -40,10 +40,7 @@ This is the block that represents a found solution. Every problem has a unique I
 
 ## How to create Custom Problems?
 
-An `extra_problems.py` is included within the source code, which the XcodeOffline Executable searches for new Problems. 
-
-To create a new problem, you'll have to use the `Problem` class. It takes multiple inputs: a name, description, ID, difficulty, Run tests, and Submit tests.
-
+An `extra_problems.py` is included within the source code, which the ScriptDSA Executable searches for new Problems. To create a new problem, you'll have to use the `Problem` class. It takes multiple inputs: a name, description, ID, difficulty, Run tests, and Submit tests.
 In order to add run/submit tests so everything works as expected, we'll need an example:
 `
 new_problems = [
@@ -56,6 +53,8 @@ new_problems = [
 Lets focus on this first array. It contains a list of `Problem`s. Inside it, if we check out our `run cases` or even `submit cases` (Im just too lazy to write submit cases), we'll see multiple nested arrays.
 Each Array is a Test Cases, with [0] being inputs, and [1] being Output. we'll notice that the contents are... Another Array! Thats because there will always be a possibility that a function requires/returns multiple stuff, so an array is used to hold all Is and Os.
 If you're passing in or returning an array, you can just nest in *another* list. Its confusing, but you'll get the hang of it!
+
+Once you're done, don't modify the main script! Just leave this file in the same direcory, the problems will automatically be fetched. Just make sure the files name is `extra_problems.py`
 
 ## How to Compile?
 

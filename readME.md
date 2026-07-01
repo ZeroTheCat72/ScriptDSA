@@ -6,7 +6,7 @@ The Main goal of this is to make it offline, as you don't have to hand over data
 
 ## Features:
 
-* Search for problems in your respective database!
+* Search for problems in your respective database! Currently only supported through modifying the main file, plan on fixing that in the future!
 
 
 ## "I can't find my problems here, Im returning to Leetcode!"

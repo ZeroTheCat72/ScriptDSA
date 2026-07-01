@@ -16,6 +16,7 @@ This is just a project, but I hope it matures!
 ## Planned Features:
 
 * add default problems to the main script, currently only 2, with one of them being a Mockup.
+* add ability to review a question and its Run Cases.
 
 ## How do I use this script?
 

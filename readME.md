@@ -6,38 +6,52 @@ The Main goal of this is to make it offline, as you don't have to hand over data
 
 ## Features:
 
-* Search for problems in your respective database! Currently only supported through modifying the main file, plan on fixing that in the future!
-
+* Search for problems in your respective database!
 
 ## "I can't find my problems here, Im returning to Leetcode!"
-Stop worrying, amigo. This script can mature with contributions from the community, and I plan on adding an "Import Problems" thingy. How it'd go is you use the Class built in the main script, and create an array of Problems. Then simply import it here!  
+Stop worrying, amigo. This script can mature with contributions from the community, you can import your own Problems. How it'd go is you use the Class built in the main script, and create an array of Problems. Then simply import it here!  
 
 This is just a project, but I hope it matures!
 
 ## Planned Features:
 
-* Add custom tests.
+* add default problems to the main script, currently only 2, with one of them being a Mockup.
 
 ## How do I use this script?
 
 Let me break it down for you:
 
-* Searching for a problem: run the script with the `--search` parameter. If you wanted to, say, look for the Binary Search Algorithm, go: `python3 XcodeOffline.py --search query n diff`, where `n` is the number of results you'd prefer (default is 25),and `diff` being difficulty, if you're looking for a certain difficulty. Options include `easy`, `medium`, `hard`, and `extreme`. The result would be:
+* Searching for a problem: If you wanted to, say, look for the Binary Search Algorithm, go: `python3 XcodeOffline.py --search query n diff`, where `n` is the number of results you'd prefer (default is 25),and `diff` being difficulty, if you're looking for a certain difficulty. Options include `easy`, `medium`, `hard`, and `extreme`. The result would be:
 
-# An Important lil note here
-instead of writing `python3 XcodeOffline.py` in your terminal, download the executable for your OS and replace that long line with `XcodeOffline`. Convenient, Right?
-
-  `ID. problem name`
-
+`ID. problem name`
 This is the block that represents a found solution. Every problem has a unique ID, which is used to identify which problem you're solving when you run/submit the tests.
 
 * Running a test: run `script --run ID`, where --run is the name of the command (in this case, running), and ID is the identifier of the problem. This assumes that the file where you wrote your function is named script.py and the function's  name is `xcodescript`.
 
-> [!TIP]
-> This script only supports Python functions sadly. Maybe I'll add support for JS/TS, potentially other languages... Maybe.
-
 * Submitting a solution: same thing as running, `--submit` instead of `--run`.
 
+> [!TIP]
+> This script only supports Python functions sadly. Maybe I'll add support for JS/TS, potentially other languages... Maybe.
+> Instead of writing `python3 XcodeOffline.py` in your terminal, download/compile the executable for your OS and replace that long line with `XcodeOffline`. Convenient, Right?
+
+## How to create Custom Problems?
+
+An `extra_problems.py` is included within the source code, which the XcodeOffline Executable searches for new Problems. 
+
+To create a new problem, you'll have to use the `Problem` class. It takes multiple inputs: a name, description, ID, difficulty, Run tests, and Submit tests.
+
+In order to add run/submit tests so everything works as expected, we'll need an example:
+`
+new_problems = [
+	Problem('return sum', 'return the sum of 2 nums.', 'Microsoft Interview Question 1', 'easy', [
+	[[1, 2], [3]]
+], [])
+]
+`
+
+Lets focus on this first array. It contains a list of `Problem`s. Inside it, if we check out our `run cases` or even `submit cases` (Im just too lazy to write submit cases), we'll see multiple nested arrays.
+Each Array is a Test Cases, with [0] being inputs, and [1] being Output. we'll notice that the contents are... Another Array! Thats because there will always be a possibility that a function requires/returns multiple stuff, so an array is used to hold all Is and Os.
+If you're passing in or returning an array, you can just nest in *another* list. Its confusing, but you'll get the hang of it!
 
 ## How to Compile?
 

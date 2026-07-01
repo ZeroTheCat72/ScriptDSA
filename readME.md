@@ -8,3 +8,6 @@ The Main goal of this is to make it offline, as you don't have to hand over data
 Stop worrying, amigo. This script can mature with contributions from the community, and I plan on adding an "Import Problems" thingy. How it'd go is you use the Class built in the main script, and create an array of Problems. Then simply import it here!  
 
 This is just a project, but I hope it matures!
+
+## Planned Features:
+Add custom tests.

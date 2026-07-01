@@ -4,9 +4,12 @@
 XcodeOffline is a script that allows you to practice Problem Solving without an Internet Connection, unlike websites like Leetcode or Codewars.
 The Main goal of this is to make it offline, as you don't have to hand over data to Leetcode or whatnot (even though I have an account on it... if this matures I can leave leetcode).  
 
-## Features:
+This Project is, and always will be, free and open source. If you paid for it, demand a refund!
 
+## Features:
+* Solve Problems, completely Offline!
 * Search for problems in your respective database!
+* Add your Own Problems too! Problem scripts like Microsoft Interview questions, Meta Interview questions, etc, made by you or the community.
 
 ## "I can't find my problems here, Im returning to Leetcode!"
 Stop worrying, amigo. This script can mature with contributions from the community, you can import your own Problems. How it'd go is you use the Class built in the main script, and create an array of Problems. Then simply import it here!  

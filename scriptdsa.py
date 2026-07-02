@@ -122,9 +122,9 @@ if sys.argv[1] == '--search':
 elif sys.argv[1] == '--run':
 	import script
 	Challenge_problem = fetch_problem(sys.argv[2], list_of_problems)
-	print(Challenge_problem.run_test(script.xcodescript))
+	print(Challenge_problem.run_test(script.scriptdsa))
 elif sys.argv[1] == '--submit':
 	import script
 	Challenge_problem = fetch_problem(sys.argv[2], list_of_problems)
-	print(Challenge_problem.submit_test(script.xcodescript))
+	print(Challenge_problem.submit_test(script.scriptdsa))
 

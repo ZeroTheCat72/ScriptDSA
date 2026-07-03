@@ -1,7 +1,7 @@
-# ScriptDSA
+# XcodeOffline
 
-## What is ScriptDSA?
-ScriptDSA is a script that allows you to practice Problem Solving without an Internet Connection, unlike websites like Leetcode or Codewars.
+## What is XcodeOffline?
+XcodeOffline is a script that allows you to practice Problem Solving without an Internet Connection, unlike websites like Leetcode or Codewars.
 The Main goal of this is to make it offline, as you don't have to hand over data to Leetcode or whatnot (even though I have an account on it... if this matures I can leave leetcode).  
 
 This Project is, and always will be, free and open source. If you paid for it, demand a refund!
@@ -25,22 +25,29 @@ This is just a project, but I hope it matures!
 
 Let me break it down for you:
 
-* Searching for a problem: If you wanted to, say, look for the Binary Search Algorithm, go: `python3 scriptdsa.py --search query n diff`, where `n` is the number of results you'd prefer (default is 25),and `diff` being difficulty, if you're looking for a certain difficulty. Options include `easy`, `medium`, `hard`, and `extreme`. The result would be:
+* Searching for a problem: If you wanted to, say, look for the Binary Search Algorithm, go: `python3 XcodeOffline.py --search query n diff`, where `n` is the number of results you'd prefer (default is 25),and `diff` being difficulty, if you're looking for a certain difficulty. Options include `easy`, `medium`, `hard`, and `extreme`. The result would be:
 
 `ID. problem name`
 This is the block that represents a found solution. Every problem has a unique ID, which is used to identify which problem you're solving when you run/submit the tests.
 
-* Running a test: run `python3 scriptdsa.py --run ID`, where --run is the name of the command (in this case, running), and ID is the identifier of the problem. This assumes that the file where you wrote your function is named script.py and the function's  name is `scriptdsa`.
+* Running a test: run `script --run ID`, where --run is the name of the command (in this case, running), and ID is the identifier of the problem. This assumes that the file where you wrote your function is named script.py and the function's  name is `xcodescript`.
 
 * Submitting a solution: same thing as running, `--submit` instead of `--run`.
 
+* Getting Problem Details: Running `script --details ID` will get you the problem name, and description. Examples are planned!
+
 > [!TIP]
 > This script only supports Python functions sadly. Maybe I'll add support for JS/TS, potentially other languages... Maybe.
-> Instead of writing `python3 scriptdsa.py` in your terminal, download/compile the executable for your OS and replace that long line with `scriptdsa`. Convenient, Right?
+
+> [!TIP]
+> Instead of writing `python3 XcodeOffline.py` in your terminal, download/compile the executable for your OS and replace that long line with `XcodeOffline`. Convenient, Right?
 
 ## How to create Custom Problems?
 
-An `extra_problems.py` is included within the source code, which the ScriptDSA Executable searches for new Problems. To create a new problem, you'll have to use the `Problem` class. It takes multiple inputs: a name, description, ID, difficulty, Run tests, and Submit tests.
+An `extra_problems.py` is included within the source code, which the XcodeOffline Executable searches for new Problems. 
+
+To create a new problem, you'll have to use the `Problem` class. It takes multiple inputs: a name, description, ID, difficulty, Run tests, and Submit tests.
+
 In order to add run/submit tests so everything works as expected, we'll need an example:
 `
 new_problems = [
@@ -53,8 +60,6 @@ new_problems = [
 Lets focus on this first array. It contains a list of `Problem`s. Inside it, if we check out our `run cases` or even `submit cases` (Im just too lazy to write submit cases), we'll see multiple nested arrays.
 Each Array is a Test Cases, with [0] being inputs, and [1] being Output. we'll notice that the contents are... Another Array! Thats because there will always be a possibility that a function requires/returns multiple stuff, so an array is used to hold all Is and Os.
 If you're passing in or returning an array, you can just nest in *another* list. Its confusing, but you'll get the hang of it!
-
-Once you're done, don't modify the main script! Just leave this file in the same direcory, the problems will automatically be fetched. Just make sure the files name is `extra_problems.py`
 
 ## How to Compile?
 
